@@ -5,11 +5,43 @@
         <meta charset="utf-8">
         <title>HELP! HELP!</title>
     </head>
+    <style>
+		canvas{
+			   width:1000px !important;
+			 height:500px !important;
+		}
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <body>
         <h1>Welcome to the help page</h1>
+        <canvas id="pie-chart"></canvas>
     <p>
     to help you, contact this number please....    
     </p>
     <a href="/">Go back home</a>
     </body>
+    <script>
+		// Bar chart
+		new Chart(document.getElementById("pie-chart"), {
+			type: 'line',
+			data: {
+			labels: ["Python", "C++", "C#", "PHP", "Ruby"],
+			datasets: [
+				{
+				label: "User (Programming)",
+				backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+				data: [478,567,734,784,433]
+				}
+			]
+			},
+			options: {
+		responsive: true,
+			legend: { display: false },
+			title: {
+				display: true,
+				text: 'Simple Chart using ChartJS Library'
+			}
+			}
+		});
+		</script>
 </html>
